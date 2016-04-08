@@ -172,3 +172,12 @@ TEST(ConnectXTest, testDefaultWidthOutBoundsFalse)
 	ConnectX obj; //default width=7,height=6, win=4
 	ASSERT_EQ(obj.at(10,1),-1);
 }
+
+TEST(ConnectXTest, testWidthOutBoundsFalse)
+{
+	ConnectX obj(10,10,4);
+	ASSERT_EQ(obj.at(50,1),-1);
+}
+
+
+
