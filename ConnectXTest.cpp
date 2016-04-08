@@ -19,3 +19,10 @@ TEST(ConnectXTest, sanityCheck)
 {
 	ASSERT_TRUE(true);
 }
+
+TEST(ConnectXTest, checkBlackTurn)
+{
+	ConnectX obj;
+	obj.showBoard();
+	ASSERT_EQ(obj.whoseTurn(),2);
+}
