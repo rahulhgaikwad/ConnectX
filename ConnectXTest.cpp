@@ -91,3 +91,72 @@ TEST(ConnectXTest, checkHeight)
 	obj.showBoard();
 	ASSERT_EQ(obj.whoseTurn(),2);
 }
+
+TEST(ConnectXTest, checkConstructorAllParamsPositive)
+{
+	ConnectX obj(10,10,4);
+	obj.showBoard();
+	ASSERT_FALSE(obj.at(0,0));
+}
+
+TEST(ConnectXTest, checkConstructorWinNegative)
+{
+	ConnectX obj(10,10,-4);
+	obj.showBoard();
+	ASSERT_FALSE(obj.at(0,0));
+}
+
+TEST(ConnectXTest, checkConstructorHeightWinNegative)
+{
+	ConnectX obj(10,-10,-4);
+	obj.showBoard();
+	ASSERT_FALSE(obj.at(0,0));
+}
+
+TEST(ConnectXTest, checkConstructorAllParamsNegative)
+{
+	ConnectX obj(-10,-10,-20);
+	obj.showBoard();
+	ASSERT_FALSE(obj.at(0,0));
+}
+
+TEST(ConnectXTest, checkConstructorWidthHeightNegative)
+{
+	ConnectX obj(-10,-10,4);
+	obj.showBoard();
+	ASSERT_FALSE(obj.at(0,1));
+}
+
+TEST(ConnectXTest, checkConstructorWidthNegative)
+{
+	ConnectX obj(-10,10,4);
+	obj.showBoard();
+	ASSERT_FALSE(obj.at(0,0));
+}
+
+TEST(ConnectXTest, checkConstructorHeightNegative)
+{
+	ConnectX obj(10,-10,20);
+	obj.showBoard();
+	ASSERT_FALSE(obj.at(0,0));
+}
+
+TEST(ConnectXTest, checkConstructorWidthWinNegative)
+{
+	ConnectX obj(-10,10,-20);
+	obj.showBoard();
+	ASSERT_FALSE(obj.at(0,0));
+}
+
+TEST(ConnectXTest, checkConstructorWinOutBounds)
+{
+	ConnectX obj(-10,-10,20);
+	obj.showBoard();
+	ASSERT_FALSE(obj.at(0,0));
+}
+
+TEST(ConnectXTest, testNegativeWidthHeightInvalid)
+{
+	ConnectX obj;
+	ASSERT_EQ(obj.at(-100,-1),-1);
+}
