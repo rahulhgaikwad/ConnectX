@@ -65,3 +65,29 @@ TEST(ConnectXTest, checkPlacePieceAboveWidth)
 	obj.showBoard();
 	ASSERT_EQ(obj.whoseTurn(),2);
 }
+
+TEST(ConnectXTest, checkHeight)
+{
+	ConnectX obj;
+	obj.showBoard();
+	obj.showBoard();
+	obj.placePiece(0);
+	obj.showBoard();
+	obj.placePiece(0);
+	obj.showBoard();
+	obj.placePiece(0);
+	obj.showBoard();
+	obj.placePiece(0);
+	obj.showBoard();
+	obj.placePiece(0);
+	obj.showBoard();
+	obj.placePiece(0);
+	obj.showBoard();
+	obj.placePiece(0);
+	obj.showBoard();
+	obj.placePiece(9);
+	obj.placePiece(-5);
+	obj.placePiece(0);
+	obj.showBoard();
+	ASSERT_EQ(obj.whoseTurn(),2);
+}
