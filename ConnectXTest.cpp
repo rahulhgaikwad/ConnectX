@@ -179,5 +179,9 @@ TEST(ConnectXTest, testWidthOutBoundsFalse)
 	ASSERT_EQ(obj.at(50,1),-1);
 }
 
-
+TEST(ConnectXTest, testWidthBelowBoundsFalse)
+{
+	ConnectX obj(10,10,4);
+	ASSERT_EQ(obj.at(-1,1),-1);
+}
 
