@@ -160,3 +160,15 @@ TEST(ConnectXTest, testNegativeWidthHeightInvalid)
 	ConnectX obj;
 	ASSERT_EQ(obj.at(-100,-1),-1);
 }
+
+//Below test cases are written to prove bug in inBounds() and 
+//at() functions. Below test case fails because at() function
+//returns different value than it suppose to return.
+//It proves that there is bug in iBounds() due to which 
+//at() function misbehaves.
+
+TEST(ConnectXTest, testDefaultWidthOutBoundsFalse)
+{
+	ConnectX obj; //default width=7,height=6, win=4
+	ASSERT_EQ(obj.at(10,1),-1);
+}
