@@ -206,5 +206,5 @@ TEST(ConnectXTest, checkAtAllBounds)
 TEST(ConnectXTest, testWidthOutBoundsTrue)
 {
 	ConnectX obj(10,10,4);
-	ASSERT_EQ(obj.at(100,1),0);
+	ASSERT_EQ(obj.at(50,1),0);
 }
