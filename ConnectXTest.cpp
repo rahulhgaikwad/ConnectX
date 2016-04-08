@@ -54,3 +54,14 @@ TEST(ConnectXTest, checkPlacePieceBelowZero)
 	obj.showBoard();
 	ASSERT_EQ(obj.whoseTurn(),1);
 }
+
+TEST(ConnectXTest, checkPlacePieceAboveWidth)
+{
+	ConnectX obj(3,3,4);
+	obj.placePiece(3);
+	obj.placePiece(3);
+	obj.placePiece(3);
+	obj.placePiece(3);
+	obj.showBoard();
+	ASSERT_EQ(obj.whoseTurn(),2);
+}
