@@ -56,8 +56,11 @@ which all depends on if(h<0 || h>=height) condition.
 The condition if(w>=width || w<0) whether or not be 'true' or 'false', the value
 of boolean 'inside' will always depends on condition if(h<0 || h>=height).
 
+==================================================================================
+Test Cases:
 
 So for testing purpose, Lets write a test case which brings such a situation.
+First test case is as follows:
 
 TEST(ConnectXTest, testWidthOutBoundsFalse)  //line 176 in ConnectXTest.cpp
 {
@@ -79,6 +82,7 @@ ultimately fails which shows at() function behaved abnormally due to bug in
 inBounds() function.
 
 Let's create one more test to confirm our conclusion.
+Second test case is as follows:
 
 TEST(ConnectXTest, testWidthOutBoundsTrue)  //line 206 in ConnectXTest.cpp
 {
