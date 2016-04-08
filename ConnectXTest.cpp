@@ -185,3 +185,21 @@ TEST(ConnectXTest, testWidthBelowBoundsFalse)
 	ASSERT_EQ(obj.at(-1,1),-1);
 }
 
+//Below test cases are false positive. Eventhough below test did  
+//pass, It should fail while asserting true. It proves that there
+//is bug in iBounds() due to which at() function misbehaves.
+
+TEST(ConnectXTest, checkAtAllBounds)
+{
+	ConnectX obj;
+	bool n1,n2,n3,n4;
+	n1 = obj.at(0,-1);
+	n2 = obj.at(0,10);
+	n3 = obj.at(20,30);
+	n4 = obj.at(-3,40);
+	ASSERT_TRUE(n1);
+	ASSERT_TRUE(n2);
+	ASSERT_TRUE(n3);
+	ASSERT_TRUE(n4);
+}
+
