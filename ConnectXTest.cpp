@@ -203,3 +203,8 @@ TEST(ConnectXTest, checkAtAllBounds)
 	ASSERT_TRUE(n4);
 }
 
+TEST(ConnectXTest, testWidthOutBoundsTrue)
+{
+	ConnectX obj(10,10,4);
+	ASSERT_EQ(obj.at(100,1),0);
+}
