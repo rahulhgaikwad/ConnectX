@@ -35,3 +35,14 @@ TEST(ConnectXTest, checkWhiteTurn)
 	obj.showBoard();
 	ASSERT_EQ(obj.whoseTurn(),1);
 }
+
+TEST(ConnectXTest, checkNotWhiteTurn)
+{
+	ConnectX obj;
+	obj.showBoard();
+	obj.placePiece(0);
+	obj.showBoard();
+	obj.placePiece(0);
+	obj.showBoard();
+	ASSERT_EQ(obj.whoseTurn(),2);
+}
