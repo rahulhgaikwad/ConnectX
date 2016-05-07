@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/rahulhgaikwad/ConnectX.svg?branch=master)](https://travis-ci.org/rahulhgaikwad/ConnectX)
+
 BUG REPORT
 
 ==================================================================================
